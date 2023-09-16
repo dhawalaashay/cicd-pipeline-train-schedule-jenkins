@@ -12,14 +12,7 @@ node {
 	version = "16.20.2"
 	// npmVersion = "7.24.0"
 }
-task installNpmVersion(type: NpmTask) {
-  args = ['install', 'npm@2.1.1']
-}
 
-task npmVersion(type: NpmTask) {
-  dependsOn installNpmVersion
-  args = ['--version']
-}
 
 //declare a build task
 task build
@@ -40,7 +33,6 @@ task zip(type: Zip) {
 }
 
 //declare task dependencies
-build.dependsOn npmVersion
 build.dependsOn zip
 zip.dependsOn npm_build
 npm_build.dependsOn npm_test

@@ -9,8 +9,7 @@ plugins {
 
 node {
 	download = true
-	// version = "16.20.2"
-	version = "latest"
+	version = "16.20.2"
 	// npmVersion = "7.24.0"
 }
 task installNpmVersion(type: NpmTask) {
